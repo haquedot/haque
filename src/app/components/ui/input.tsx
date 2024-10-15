@@ -4,22 +4,19 @@ import { cn } from "@/lib/utils";
 import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
 
 // Input Component
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
   ({ className, type, ...props }, ref) => {
-    const radius = 100; // change this to increase the radius of the hover effect
+    const radius = 100; // Change this to increase the radius of the hover effect
     const [visible, setVisible] = React.useState(false);
 
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
-    function handleMouseMove({ currentTarget, clientX, clientY }: any) {
-      const { left, top } = currentTarget.getBoundingClientRect();
+    function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+      const { left, top } = e.currentTarget.getBoundingClientRect();
 
-      mouseX.set(clientX - left);
-      mouseY.set(clientY - top);
+      mouseX.set(e.clientX - left);
+      mouseY.set(e.clientY - top);
     }
 
     return (
@@ -27,7 +24,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         style={{
           background: useMotionTemplate`
             radial-gradient(
-              ${visible ? radius + "px" : "0px"} circle at ${mouseX}px ${mouseY}px,
+              ${visible ? `${radius}px` : "0px"} circle at ${mouseX}px ${mouseY}px,
               var(--blue-500),
               transparent 80%
             )
@@ -58,22 +55,19 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 Input.displayName = "Input";
 
 // TextArea Component
-export interface TextAreaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
-
-const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
+const TextArea = React.forwardRef<HTMLTextAreaElement, React.TextareaHTMLAttributes<HTMLTextAreaElement>>(
   ({ className, ...props }, ref) => {
-    const radius = 100; // change this to increase the radius of the hover effect
+    const radius = 100; // Change this to increase the radius of the hover effect
     const [visible, setVisible] = React.useState(false);
 
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
-    function handleMouseMove({ currentTarget, clientX, clientY }: any) {
-      const { left, top } = currentTarget.getBoundingClientRect();
+    function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+      const { left, top } = e.currentTarget.getBoundingClientRect();
 
-      mouseX.set(clientX - left);
-      mouseY.set(clientY - top);
+      mouseX.set(e.clientX - left);
+      mouseY.set(e.clientY - top);
     }
 
     return (
@@ -81,7 +75,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
         style={{
           background: useMotionTemplate`
             radial-gradient(
-              ${visible ? radius + "px" : "0px"} circle at ${mouseX}px ${mouseY}px,
+              ${visible ? `${radius}px` : "0px"} circle at ${mouseX}px ${mouseY}px,
               var(--blue-500),
               transparent 80%
             )
