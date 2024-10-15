@@ -40,7 +40,7 @@ export const AnimatedTooltip = ({
 
   return (
     <>
-      {items.map((item, idx) => (
+      {items.map((item) => (
         <div
           className="relative group w-full flex justify-center mb-8 w-full"
           key={item.name}

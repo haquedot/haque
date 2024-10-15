@@ -72,14 +72,10 @@ export function Button({
 export const MovingBorder = ({
   children,
   duration = 2000,
-  rx,
-  ry,
   ...otherProps
 }: {
   children: React.ReactNode;
   duration?: number;
-  rx?: string;
-  ry?: string;
   [key: string]: any;
 }) => {
   const pathRef = useRef<any>();

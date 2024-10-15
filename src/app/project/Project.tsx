@@ -1,9 +1,6 @@
 "use client";
 import { PinContainer } from "../components/ui/3d-pin";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-
-
 import farmOnHand from "/public/images/farmOndHand.png";
 import farmOnHandLogo from "/public/images/farmOnHandLogo.svg";
 import exceedRoboticsLogo from "/public/images/exceedRoboticsLogo.svg";

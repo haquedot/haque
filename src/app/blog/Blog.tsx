@@ -14,17 +14,29 @@ interface Post {
     author: string;
 }
 
+interface MediumPost {
+    title: string;
+    pubDate: string;
+    description: string;
+    link: string;
+    author: string;
+}
+
+interface MediumApiResponse {
+    items: MediumPost[];
+}
+
 const Blog: React.FC = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const username = 'haquedot';
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const response = await axios.get(
+            const response = await axios.get<MediumApiResponse>(
                 `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${username}`
             );
 
-            setPosts(response.data.items.map((item: any) => ({
+            setPosts(response.data.items.map((item: MediumPost) => ({
                 title: item.title,
                 pubDate: item.pubDate,
                 description: item.description,
