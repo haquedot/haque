@@ -26,7 +26,7 @@ export function Button({
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: any;
+  [key: string]: unknown; // Replace 'any' with 'unknown' for otherProps
 }) {
   return (
     <Component
@@ -75,7 +75,7 @@ export const MovingBorder = ({
 }: {
   children: React.ReactNode;
   duration?: number;
-  [key: string]: any;
+  [key: string]: unknown; // Replace 'any' with 'unknown' for otherProps
 }) => {
   const pathRef = useRef<SVGPathElement>(null); // Specify SVGPathElement
   const progress = useMotionValue<number>(0);
