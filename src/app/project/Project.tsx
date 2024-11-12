@@ -7,8 +7,8 @@ import exceedRoboticsLogo from "/public/images/exceedRoboticsLogo.svg";
 import exceedRobotics from "/public/images/exceedRobotics.png";
 import elonaLogo from "/public/images/elonaLogo.svg";
 import elona from "/public/images/elona.jpg";
-
-
+import cariload from "/public/images/cariload.png";
+import cariloadLogo from "/public/images/cariloadLogo.svg";
 
 import Image from "next/image";
 import { StaticImageData } from "next/image";
@@ -41,6 +41,15 @@ export default function Project() {
     }
 
     const projects: Project[] = [
+        {
+            title: "Cariload",
+            description: "Design and developed a logistics delivery web platform using NextJS, TailwindCSS, MongoDB as a freelance project for a client.",
+            techStack: "NextJS, TailwindCSS, MongoDB",
+            repo: "#",
+            liveUrl: "https://cariload.vercel.app/",
+            imageProject: cariload,
+            projectLogo: cariloadLogo,
+        },
         {
             title: "FarmOnHand",
             description:
