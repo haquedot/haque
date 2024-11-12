@@ -43,7 +43,7 @@ export default function Project() {
     const projects: Project[] = [
         {
             title: "Cariload",
-            description: "Design and developed a logistics delivery web platform using NextJS, TailwindCSS, MongoDB as a freelance project for a client.",
+            description: "Design and developed a logistics transport web platform using NextJS, TailwindCSS, MongoDB as a freelance project for a client.",
             techStack: "NextJS, TailwindCSS, MongoDB",
             repo: "#",
             liveUrl: "https://cariload.vercel.app/",
