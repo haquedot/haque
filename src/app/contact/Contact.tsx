@@ -11,41 +11,44 @@ export function Contact() {
     const [error, setError] = useState<string | null>(null);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault(); 
-        const form = e.currentTarget; 
+        e.preventDefault();
+        const form = e.currentTarget;
         setLoading(true);
         setError(null);
         setSuccess(false);
-    
-        const formData = new FormData(form); 
+
+        const formData = new FormData(form);
         const data = {
             name: formData.get("name") as string,
             email: formData.get("email") as string,
             message: formData.get("message") as string,
         };
-    
+
         try {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
             });
-    
+
             if (!res.ok) {
                 throw new Error("Failed to send message.");
             }
-    
+
             form.reset();
             setSuccess(true);
-    
+
             setTimeout(() => setSuccess(false), 3000);
-        } catch (err: any) {
-            setError(err.message || "An error occurred while sending the message.");
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError("An unexpected error occurred while sending the message.");
+            }
         } finally {
             setLoading(false);
         }
     };
-    
 
     return (
         <div className="md:h-screen w-full flex items-center justify-center rounded-none shadow-input bg-black px-4 py-10 md:py-0">
