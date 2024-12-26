@@ -3,7 +3,9 @@ import { Skill } from "./Skill";
 export default function Home() {
     return (
         <>
-            <Skill/>
+            <div className="min-h-screen bg-black">
+                <Skill />
+            </div>
         </>
 
     );

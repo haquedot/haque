@@ -3,7 +3,9 @@ import Project from "./Project";
 export default function Home() {
     return (
         <>
-            <Project />
+            <div className="min-h-screen bg-black">
+                <Project />
+            </div>
         </>
 
     );

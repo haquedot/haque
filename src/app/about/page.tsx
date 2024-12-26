@@ -3,7 +3,9 @@ import { About } from "./About";
 export default function Home() {
     return (
         <>
-            <About />
+            <div className="min-h-screen bg-black">
+                <About />
+            </div>
         </>
 
     );

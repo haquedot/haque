@@ -43,11 +43,13 @@ export const socials = [
 export default function Social() {
     return (
         <>
-            <div className="py-10 px-4 w-full md:max-w-4xl mx-auto">
-                <h1 className="mb-8 px-2 py-0.5 text-xs text-start text-[#40ffa3] border border-[#40ffa3] w-min rounded-3xl">Socials</h1>
-                <div className="flex flex-col">
-                    <div className="h-min flex flex-row justify-center w-full md:max-w-4xl grid grid-cols-4 sm:grid-cols-6 mx-auto gap-4">
-                        <AnimatedTooltip items={socials} />
+            <div className="min-h-screen bg-black">
+                <div className="py-10 px-4 w-full md:max-w-4xl mx-auto">
+                    <h1 className="mb-8 px-2 py-0.5 text-xs text-start text-[#40ffa3] border border-[#40ffa3] w-min rounded-3xl">Socials</h1>
+                    <div className="flex flex-col">
+                        <div className="h-min flex flex-row justify-center w-full md:max-w-4xl grid grid-cols-4 sm:grid-cols-6 mx-auto gap-4">
+                            <AnimatedTooltip items={socials} />
+                        </div>
                     </div>
                 </div>
             </div>

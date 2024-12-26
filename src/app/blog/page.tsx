@@ -3,7 +3,9 @@ import Blog from "./Blog";
 export default function Home() {
     return (
         <>
-        <Blog />
+            <div className="min-h-screen bg-black">
+                <Blog />
+            </div>
         </>
 
     );
